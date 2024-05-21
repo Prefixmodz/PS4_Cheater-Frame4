@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using System.Configuration;
-using libdebug;
+using libframe4;
 using System.Collections.Generic;
 
 namespace PS4_Cheater
@@ -189,8 +189,8 @@ namespace PS4_Cheater
             try
             {
                 Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration(fileName);
-                string value = config.AppSettings.Settings[key].Value;
-                return value;
+                //string value = config.AppSettings.Settings[key].Value;
+                //return value;
             }
             catch
             {
@@ -203,7 +203,7 @@ namespace PS4_Cheater
             try
             {
                 Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration(fileName);
-                string value = config.AppSettings.Settings[key].Value = newValue;
+                //string value = config.AppSettings.Settings[key].Value = newValue;
                 config.Save();
                 return true;
             }

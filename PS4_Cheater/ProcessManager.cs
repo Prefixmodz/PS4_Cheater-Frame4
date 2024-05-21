@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using libdebug;
+using libframe4;
 
 namespace PS4_Cheater
 {

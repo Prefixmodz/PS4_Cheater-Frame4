@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using libdebug;
+using libframe4;
 using System.Threading;
 using System.Globalization;
 using System.Collections;
@@ -45,7 +45,7 @@ namespace PS4_Cheater
     public class MemoryHelper
     {
         public static int num_threads = 3;
-        public static PS4DBG[] ps4 = new PS4DBG[num_threads];
+        public static FRAME4[] ps4 = new FRAME4[num_threads];
         private static Mutex[] mutex = new Mutex[num_threads];
 
         private int SelfProcessID;
@@ -79,7 +79,7 @@ namespace PS4_Cheater
                 for (int i = 0; i < num_threads; i++)
                 {
                     mutex[i].WaitOne();
-                    ps4[i] = new PS4DBG(ip);
+                    ps4[i] = new FRAME4(ip);
                     ps4[i].Connect();
                     mutex[i].ReleaseMutex();
                 }

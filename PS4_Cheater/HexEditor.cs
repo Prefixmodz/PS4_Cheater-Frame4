@@ -10,7 +10,7 @@ using Be.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using libdebug;
+using libframe4;
 
 namespace PS4_Cheater
 {

@@ -1,6 +1,6 @@
 ﻿namespace PS4_Cheater
 {
-    using libdebug;
+    using libframe4;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -108,26 +108,26 @@
             string version = Config.getSetting("ps4 version");
             string port = Config.getSetting("port");
             string ip = Config.getSetting("ip");
-            if (version == "7.02")
-            {
-                version_list.SelectedIndex = VERSION_LIST_702;
-                Util.Version = 702;
-            }
-            else if (version == "6.72")
-            {
-                version_list.SelectedIndex = VERSION_LIST_672;
-                Util.Version = 672;
-            }
-            else if (version == "5.05")
-            {
-                version_list.SelectedIndex = VERSION_LIST_505;
-                Util.Version = 505;
-            }
-            else
-            {
-                Util.Version = 702;
-                version_list.SelectedIndex = VERSION_LIST_DEFAULT;
-            }
+            //if (version == "7.02")
+            //{
+            //    version_list.SelectedIndex = VERSION_LIST_702;
+            //    Util.Version = 702;
+            //}
+            //else if (version == "6.72")
+            //{
+            //    version_list.SelectedIndex = VERSION_LIST_672;
+            //    Util.Version = 672;
+            //}
+            //else if (version == "5.05")
+            //{
+            //    version_list.SelectedIndex = VERSION_LIST_505;
+            //    Util.Version = 505;
+            //}
+            //else
+            //{
+            //    Util.Version = 702;
+            //    version_list.SelectedIndex = VERSION_LIST_DEFAULT;
+            //}
 
             if (!string.IsNullOrEmpty(ip))
             {
@@ -150,20 +150,20 @@
 
             string ip = Config.getSetting("ip");
             string version = "";
-            switch (version_list.SelectedIndex)
-            {
-                case VERSION_LIST_702:
-                    version = "7.02";
-                    break;
-                case VERSION_LIST_672:
-                    version = "6.72";
-                    break;
-                case VERSION_LIST_505:
-                    version = "5.05";
-                    break;
-                default:
-                    break;
-            }
+            //switch ()
+            //{
+            //    case VERSION_LIST_702:
+            //        version = "7.02";
+            //        break;
+            //    case VERSION_LIST_672:
+            //        version = "6.72";
+            //        break;
+            //    case VERSION_LIST_505:
+            //        version = "5.05";
+            //        break;
+            //    default:
+            //        break;
+            //}
 
             if (!string.IsNullOrWhiteSpace(version))
             {
@@ -993,26 +993,12 @@
         {
             try
             {
-                string patch_path = Application.StartupPath;
-                switch (version_list.SelectedIndex)
-                {
-                    case VERSION_LIST_702:
-                        patch_path += @"\payloads\7.02\";
-                        break;
-                    case VERSION_LIST_672:
-                        patch_path += @"\payloads\6.72\";
-                        break;
-                    case VERSION_LIST_505:
-                        patch_path += @"\payloads\5.05\";
-                        break;
-                    default:
-                        throw new System.ArgumentException("Unknown version.");
-                }
 
-                this.send_pay_load(this.ip_box.Text, patch_path + @"ps4debug.bin", Convert.ToInt32(this.port_box.Text));
+
+                this.send_pay_load(this.ip_box.Text, @"Frame4.bin", Convert.ToInt32(this.port_box.Text));
                 Thread.Sleep(1000);
                 this.msg.ForeColor = Color.Green;
-                this.msg.Text = "ps4debug.bin injected successfully!";
+                this.msg.Text = "Frame4.bin injected successfully!";
             }
             catch (Exception exception)
             {
@@ -1269,21 +1255,19 @@
 
         private void version_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (version_list.SelectedIndex)
-            {
-                case VERSION_LIST_702:
-                    Util.Version = 702;
-                    break;
+            //switch (version_list.SelectedIndex)
+            //{
+            //    case VERSION_LIST_702:
+            //        Util.Version = 702;
+            //        break;
 
-                case VERSION_LIST_672:
-                    Util.Version = 672;
-                    break;
+            //    case VERSION_LIST_672:
+            //        Util.Version = 672;
+            //        break;
 
-                case VERSION_LIST_505:
-                    Util.Version = 505;
-                    break;
-            }
+            //    case VERSION_LIST_505:
+            //        Util.Version = 505;
+            //        break;
         }
     }
 }
-

@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>PS4_Cheater</RootNamespace>
     <AssemblyName>PS4_Cheater</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -72,8 +72,8 @@
     <Reference Include="Be.Windows.Forms.HexBox">
       <HintPath>lib\Be.Windows.Forms.HexBox.dll</HintPath>
     </Reference>
-    <Reference Include="libdebug">
-      <HintPath>lib\libdebug.dll</HintPath>
+    <Reference Include="libFrame4">
+      <HintPath>..\..\..\Frame4-DLL\bin\Debug\libFrame4.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
